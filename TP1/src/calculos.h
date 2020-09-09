@@ -6,9 +6,12 @@
  */
 
 /**
- *
- *
- *
+ *brief: Funciones para
+ *param: pResultado
+ *param: operador1
+ *param: operador2
+ *return: pResultado
+ *return: n
  */
 #ifndef CALCULOS_H_
 #define CALCULOS_H_

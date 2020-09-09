@@ -207,7 +207,7 @@ int main(void) {
 				}
 
 				//factorial
-				if (respuestaFactorial1 == 1) {
+				if (respuestaFactorial1 == 1 && op1 != 1 && op2 != 1) {
 					printf(
 							"\n\nNo es posible sacar el factorial de numeros negativos (%d).\n\n",
 							op1);
@@ -216,7 +216,7 @@ int main(void) {
 							respuestaFactorial1);
 				}
 
-				if (respuestaFactorial2 == 1) {
+				if (respuestaFactorial2 == 1 && op1 != 1 && op2 != 1) {
 					printf(
 							"No es posible sacar el factorial de numeros negativos (%d).\n\n",
 							op2);
