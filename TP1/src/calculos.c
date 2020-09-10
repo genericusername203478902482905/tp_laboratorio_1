@@ -8,6 +8,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
+
 int sumar(int *pResultado, int operador1, int operador2) {
 	int resultado;
 	int retorno = -1;
