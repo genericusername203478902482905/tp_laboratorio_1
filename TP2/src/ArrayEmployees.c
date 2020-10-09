@@ -16,7 +16,7 @@
 
 
 #define NAMELIMIT 51
-#define MAX 5
+#define MAX 1000
 
 void hardCode(Empleado *pArray, int limite) {
 

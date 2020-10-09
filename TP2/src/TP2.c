@@ -15,7 +15,7 @@
 #include "utnInputs.h"
 #include "ArrayEmployees.h"
 
-#define MAX 5
+#define MAX 1000
 #define NAMELIMIT 51
 
 int main(void) {
