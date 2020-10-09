@@ -88,14 +88,14 @@ int modifyEmployee(Empleado* pArray, int indice)
 	int sect;
 
 	if (pArray != NULL) {
-	resultadoModSeleccion = getInt(&modSeleccion, "Seleccione el campo a modificar\n"
+	resultadoModSeleccion = getInt(&modSeleccion, "\nSeleccione el campo a modificar\n"
 					"1- NOMBRE \n"
 					"2- APELLIDO \n"
 					"3- SALARIO \n"
 					"4- SECTOR \n"
 			        "5- SALIR \n"
 					"Ingrese Opcion: \n",
-					"\nError: Seleccione una opcion valida.\n", 1, 5, 3);
+					"\nError: Seleccione una opcion valida.\n", 1, 5, 10);
 
 	if (resultadoModSeleccion != 0)
 	{
@@ -137,8 +137,8 @@ int modifyEmployee(Empleado* pArray, int indice)
 		break;
 
 	case 5:
+		retorno = 1;
 		break;
-
 	}
 	}
 }
@@ -306,7 +306,7 @@ int salaryCalculator(Empleado *pArray, int limite) {
 		promedio = acumSalario / empleadoActivo;
 
 		for (i = 0; i < limite; i++) {
-			if (pArray[i].salary > promedio) {
+			if (pArray[i].salary > promedio && pArray[i].isEmpty != 1) {
 				empleadosPromedio++;
 			}
 		}

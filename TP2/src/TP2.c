@@ -25,6 +25,7 @@ int main(void) {
 	int resultadoMenu = 0;
 	int resultadoFindEmployeeById = 0;
 	int resultadoID = 0;
+	int resultadoModifyEmployee = 0;
 	int resultadoRemoveEmployee = 0;
 	int resultadoOrder = 0;
 	int resultadoSort = 0;
@@ -93,10 +94,17 @@ int main(void) {
 						printf("\nNo se encontro empleado con ese ID.");
 						system("pause");
 					} else {
-						modifyEmployee(arrayEmpleados,
+						resultadoModifyEmployee = modifyEmployee(arrayEmpleados,
 								resultadoFindEmployeeById);
+						if (resultadoModifyEmployee == 0){
 						printf("\nSe modifico un empleado con exito.\n");
 						system("pause");
+						}
+						else if (resultadoModifyEmployee == -1)
+						{
+							printf("\nHubo un error modificando el empleado.\n");
+							system("pause");
+						}
 					}
 				}
 

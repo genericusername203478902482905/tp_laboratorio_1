@@ -48,7 +48,7 @@ int alta(Empleado *pArray, int limite, int *contEmpleados);
  */
 int modifyEmployee(Empleado* pArray, int indice);
 
-/** \brief Elimina basura del array y setea flag (isEmpty) en 1 para todos
+/** \brief Setea flag (isEmpty) en 1 para todos para inicializar array
  * \param pArray Array de Empleados a ser inicializado
  * \param limite Limite del array de empleados
  * \return Retorna -1 (ERROR) y 0 (EXITO)
