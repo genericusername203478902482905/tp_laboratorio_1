@@ -104,7 +104,7 @@ int main()
                 break;
 
             case 9:
-                controller_saveAsBinary("bin.dat",listaEmpleados);
+                controller_saveAsBinary("data.bin",listaEmpleados);
                 break;
         }
 

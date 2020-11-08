@@ -35,7 +35,7 @@ Employee* employee_newParametros(char *var1, char *var2, char *var3, char *var4)
     return p;
 }
 
-/********FUNCIONES SET***********/
+/* FUNCIONES SET */
 
 void employee_setId(Employee* this, int id)
 {
@@ -61,7 +61,7 @@ void employee_setHorasTrabajadas(Employee* this, int horasTrabajadas)
         this->horasTrabajadas = horasTrabajadas;
 }
 
-/*********FUNCIONES GET**********/
+/* FUNCIONES GET */
 
 int employee_getId(Employee* this)
 {
@@ -83,5 +83,111 @@ int employee_getHorasTrabajadas(Employee* this)
     return this->horasTrabajadas;
 }
 
+/* COMPARACIONES. */
+
+int employee_compareById(void* pEmpleado1,void* pEmpleado2)
+{
+	int vRetorno = -1;
+	int auxId1;
+	int auxId2;
+	int dif;
+
+	auxId1 = employee_getId(pEmpleado1);
+	auxId2 = employee_getId(pEmpleado2);
+
+	if(pEmpleado1 != NULL && pEmpleado2 != NULL)
+	{
+
+			dif = auxId1 - auxId2;
+			if(dif<0)
+			{
+				vRetorno = -1;
+			}
+			else if(dif == 0){
+				vRetorno = 0;
+			}else{
+				vRetorno = 1;
+			}
+
+	}
+
+	return vRetorno;
+}
+
+int employee_compareByName(void* pEmpleado1,void* pEmpleado2)
+{
+	int vRetorno = -1;
+	char auxNombre1[128];
+	char auxNombre2[128];
+
+//	auxNombre1 = employee_getNombre(pEmpleado1);
+//	auxNombre2 = employee_getNombre(pEmpleado2);
+
+	strcpy(auxNombre1,employee_getNombre(pEmpleado1));
+	strcpy(auxNombre2,employee_getNombre(pEmpleado2));
+
+	if(pEmpleado1 != NULL && pEmpleado2 != NULL)
+	{
+		vRetorno = strcmp(auxNombre1,auxNombre2);
+	}
+
+	return vRetorno;
+}
+
+int employee_compareByWorkedTime(void* pEmpleado1,void* pEmpleado2)
+{
+	int vRetorno;
+	int auxHorasTrabajadas1;
+	int auxHorasTrabajadas2;
+	int dif;
+
+	auxHorasTrabajadas1 = employee_getHorasTrabajadas(pEmpleado1);
+	auxHorasTrabajadas2 = employee_getHorasTrabajadas(pEmpleado2);
+
+	if(pEmpleado1 != NULL && pEmpleado2 != NULL)
+	{
+		dif = auxHorasTrabajadas1 - auxHorasTrabajadas2;
+		if(dif<0)
+		{
+			vRetorno = -1;
+		}
+		else if(dif == 0){
+			vRetorno = 0;
+		}else{
+			vRetorno = 1;
+		}
+
+	}
+
+	return vRetorno;
+}
 
 
+int employee_compareBySalary(void* pEmpleado1,void* pEmpleado2)
+{
+	int vRetorno = -1;
+	int auxSueldo1;
+	int auxSueldo2;
+	int dif;
+
+	auxSueldo1 = employee_getSueldo(pEmpleado1);
+	auxSueldo2 = employee_getSueldo(pEmpleado2);
+
+	if(pEmpleado1 != NULL && pEmpleado2 != NULL)
+	{
+
+			dif = auxSueldo1 - auxSueldo2;
+			if(dif<0)
+			{
+				vRetorno = -1;
+			}
+			else if(dif == 0){
+				vRetorno = 0;
+			}else{
+				vRetorno = 1;
+			}
+
+	}
+
+	return vRetorno;
+}
