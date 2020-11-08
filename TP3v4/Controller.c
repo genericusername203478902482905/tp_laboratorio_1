@@ -242,7 +242,7 @@ int controller_sortEmployee(LinkedList *pArrayListEmployee) {
 							"4- ORDENAR POR SALARIO.\n"
 							"5- VOLVER.\n"
 							"----------------------------------\n");
-				} while (utn_getInt(&subMenu, " Ingrese la opcion que desea: ",
+				} while (utn_getInt(&subMenu, "Ingrese la opcion deseada: ",
 						"\nIngrese una opcion valida.\n", 1, 5, 5) == -1);
 				system("cls");
 
@@ -256,33 +256,23 @@ int controller_sortEmployee(LinkedList *pArrayListEmployee) {
 								"3- VOLVER.\n"
 								"---------------------------------------\n");
 					} while (utn_getInt(&subMenu,
-							" Ingrese la opcion que desea: ",
+							"Ingrese la opcion deseada: ",
 							"\nIngrese una opcion valida.\n", 1, 3, 5) == -1);
 
 					system("cls");
 					switch (subMenu) {
 					case 1:
-						if (!ll_sort(pArrayListEmployee, employee_compareById,
-								1)
-								&& !controller_ListEmployee(
-										pArrayListEmployee)) {
-							ret = 0;
-							printf("Sorteo realizado.\n");
-						} else {
-							printf("Error en el sorteo.\n");
-						}
+						ll_sort(pArrayListEmployee, employee_compareById,1);
+						controller_ListEmployee(pArrayListEmployee);
+						ret = 0;
+						printf("Sorteo realizado.\n");
 						system("pause");
 						break;
 					case 2:
-						if (!ll_sort(pArrayListEmployee, employee_compareById,
-								0)
-								&& !controller_ListEmployee(
-										pArrayListEmployee)) {
-							ret = 0;
-							printf("Sorteo realizado.\n");
-						} else {
-							printf("Error en el sorteo.\n");
-						}
+						ll_sort(pArrayListEmployee, employee_compareById,0);
+						controller_ListEmployee(pArrayListEmployee);
+						ret = 0;
+						printf("Sorteo realizado.\n");
 						system("pause");
 						break;
 
@@ -301,33 +291,23 @@ int controller_sortEmployee(LinkedList *pArrayListEmployee) {
 								"3- VOLVER.\n"
 								"-------------------------------------------\n");
 					} while (utn_getInt(&subMenu,
-							" Ingrese la opcion que desea: ",
+							"Ingrese la opcion deseada: ",
 							"\nIngrese una opcion valida.\n", 1, 3, 5) == -1);
 					system("cls");
 
 					switch (subMenu) {
 					case 1:
-						if (!ll_sort(pArrayListEmployee, employee_compareByName,
-								1)
-								&& !controller_ListEmployee(
-										pArrayListEmployee)) {
-							ret = 0;
-							printf("Sorteo realizado.\n");
-						} else {
-							printf("Error en el sorteo.\n");
-						}
+						ll_sort(pArrayListEmployee, employee_compareByName,1);
+						controller_ListEmployee(pArrayListEmployee);
+						ret = 0;
+						printf("Sorteo realizado.\n");
 						system("pause");
 						break;
 					case 2:
-						if (!ll_sort(pArrayListEmployee, employee_compareByName,
-								0)
-								&& !controller_ListEmployee(
-										pArrayListEmployee)) {
-							ret = 0;
-							printf("Sorteo realizado.\n");
-						} else {
-							printf("Error en el sorteo.\n");
-						}
+						ll_sort(pArrayListEmployee, employee_compareByName,0);
+						controller_ListEmployee(pArrayListEmployee);
+						ret = 0;
+						printf("Sorteo realizado.\n");
 						system("pause");
 						break;
 					case 3:
@@ -344,36 +324,23 @@ int controller_sortEmployee(LinkedList *pArrayListEmployee) {
 								"3- VOLVER.\n"
 								"-----------------------------------------------------\n");
 					} while (utn_getInt(&subMenu,
-							" Ingrese la opcion que desea: ",
+							"Ingrese la opcion deseada: ",
 							"\nIngrese una opcion valida.\n", 1, 3, 5) == -1);
 					system("cls");
 
 					switch (subMenu) {
 					case 1:
-
-						if (!ll_sort(pArrayListEmployee,
-								employee_compareByWorkedTime, 1)
-								&& !controller_ListEmployee(
-										pArrayListEmployee)) {
-							ret = 0;
-							printf("Sorteo realizado.\n");
-						} else {
-							printf("Error en el sorteo.\n");
-						}
+						ll_sort(pArrayListEmployee,employee_compareByWorkedTime, 1);
+						controller_ListEmployee(pArrayListEmployee);
+						ret = 0;
+						printf("Sorteo realizado.\n");
 						system("pause");
-
 						break;
 					case 2:
-
-						if (!ll_sort(pArrayListEmployee,
-								employee_compareByWorkedTime, 0)
-								&& !controller_ListEmployee(
-										pArrayListEmployee)) {
-							ret = 0;
-							printf("Sorteo realizado.\n");
-						} else {
-							printf("Error en el sorteo.\n");
-						}
+						ll_sort(pArrayListEmployee,employee_compareByWorkedTime, 0);
+						controller_ListEmployee(pArrayListEmployee);
+						ret = 0;
+						printf("Sorteo realizado.\n");
 						system("pause");
 						break;
 					case 3:
@@ -393,33 +360,23 @@ int controller_sortEmployee(LinkedList *pArrayListEmployee) {
 								"3- VOLVER.\n"
 								"--------------------------------------------\n");
 					} while (utn_getInt(&subMenu,
-							" Ingrese la opcion que desea: ",
+							"Ingrese la opcion deseada: ",
 							"\nIngrese una opcion valida.\n", 1, 3, 5) == -1);
 					system("cls");
 
 					switch (subMenu) {
 					case 1:
-						if (!ll_sort(pArrayListEmployee,
-								employee_compareBySalary, 1)
-								&& !controller_ListEmployee(
-										pArrayListEmployee)) {
-							ret = 0;
-							printf("Sorteo realizado.\n");
-						} else {
-							printf("Error en el sorteo.\n");
-						}
+						ll_sort(pArrayListEmployee, employee_compareBySalary, 1);
+						controller_ListEmployee(pArrayListEmployee);
+						ret = 0;
+						printf("\nSorteo realizado.\n");
 						system("pause");
 						break;
 					case 2:
-						if (!ll_sort(pArrayListEmployee,
-								employee_compareBySalary, 0)
-								&& !controller_ListEmployee(
-										pArrayListEmployee)) {
-							ret = 0;
-							printf("Sorteo realizado.\n");
-						} else {
-							printf("Error en el sorteo.\n");
-						}
+						ll_sort(pArrayListEmployee, employee_compareBySalary, 0);
+						controller_ListEmployee(pArrayListEmployee);
+						ret = 0;
+						printf("\nSorteo realizado.\n");
 						system("pause");
 						break;
 					case 3:
