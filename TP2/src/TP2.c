@@ -36,8 +36,9 @@ int main(void) {
 	int opcion;
 	int flagAltas = 0;
 	int contEmpleados = 0;
+	int
 
-	int id;
+	int id=0;
 	int orden;
 
 	Empleado arrayEmpleados[MAX];
