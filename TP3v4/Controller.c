@@ -253,10 +253,11 @@ int controller_sortEmployee(LinkedList *pArrayListEmployee) {
 						printf("---------------------------------------\n"
 								"1- ORDENAR POR ID DE MANERA ASCENDENTE \n"
 								"2- ORDENAR POR ID DE MANERA DESCENDENTE\n"
+								"3- VOLVER.\n"
 								"---------------------------------------\n");
 					} while (utn_getInt(&subMenu,
 							" Ingrese la opcion que desea: ",
-							"\nIngrese una opcion valida.\n", 1, 2, 5) == -1);
+							"\nIngrese una opcion valida.\n", 1, 3, 5) == -1);
 
 					system("cls");
 					switch (subMenu) {
@@ -284,7 +285,11 @@ int controller_sortEmployee(LinkedList *pArrayListEmployee) {
 						}
 						system("pause");
 						break;
+
+					case 3:
+						break;
 					}
+
 					break;
 				case 2:
 					do {
@@ -293,10 +298,11 @@ int controller_sortEmployee(LinkedList *pArrayListEmployee) {
 								"-------------------------------------------\n"
 								"1- ORDENAR POR NOMBRE DE MANERA ASCENDENTE \n"
 								"2- ORDENAR POR NOMBRE DE MANERA DESCENDENTE\n"
+								"3- VOLVER.\n"
 								"-------------------------------------------\n");
 					} while (utn_getInt(&subMenu,
 							" Ingrese la opcion que desea: ",
-							"\nIngrese una opcion valida.\n", 1, 2, 5) == -1);
+							"\nIngrese una opcion valida.\n", 1, 3, 5) == -1);
 					system("cls");
 
 					switch (subMenu) {
@@ -323,6 +329,8 @@ int controller_sortEmployee(LinkedList *pArrayListEmployee) {
 							printf("Error en el sorteo.\n");
 						}
 						system("pause");
+						break;
+					case 3:
 						break;
 					}
 					break;
@@ -333,10 +341,11 @@ int controller_sortEmployee(LinkedList *pArrayListEmployee) {
 								"-----------------------------------------------------\n"
 								"1- ORDENAR POR HORAS TRABAJADAS DE MANERA ASCENDENTE \n"
 								"2- ORDENAR POR HORAS TRABAJADAS DE MANERA DESCENDENTE\n"
+								"3- VOLVER.\n"
 								"-----------------------------------------------------\n");
 					} while (utn_getInt(&subMenu,
 							" Ingrese la opcion que desea: ",
-							"\nIngrese una opcion valida.\n", 1, 2, 5) == -1);
+							"\nIngrese una opcion valida.\n", 1, 3, 5) == -1);
 					system("cls");
 
 					switch (subMenu) {
@@ -367,6 +376,8 @@ int controller_sortEmployee(LinkedList *pArrayListEmployee) {
 						}
 						system("pause");
 						break;
+					case 3:
+						break;
 
 					}
 
@@ -379,10 +390,11 @@ int controller_sortEmployee(LinkedList *pArrayListEmployee) {
 								"--------------------------------------------\n"
 								"1- ORDENAR POR SALARIO DE MANERA ASCENDENTE \n"
 								"2- ORDENAR POR SALARIO DE MANERA DESCENDENTE\n"
+								"3- VOLVER.\n"
 								"--------------------------------------------\n");
 					} while (utn_getInt(&subMenu,
 							" Ingrese la opcion que desea: ",
-							"\nIngrese una opcion valida.\n", 1, 2, 5) == -1);
+							"\nIngrese una opcion valida.\n", 1, 3, 5) == -1);
 					system("cls");
 
 					switch (subMenu) {
@@ -409,6 +421,8 @@ int controller_sortEmployee(LinkedList *pArrayListEmployee) {
 							printf("Error en el sorteo.\n");
 						}
 						system("pause");
+						break;
+					case 3:
 						break;
 					}
 					break;
