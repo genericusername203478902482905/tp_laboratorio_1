@@ -66,7 +66,7 @@ eArticulo* articulo_newParametros(char *idStr, char *articuloStr,
 				&& !articulo_setPrecio(this, atoi(precioStr))
 				&& !articulo_setMedida(this, medidaStr)
 				&& !articulo_setRubroId(this, atoi(rubroIdStr)))) {
-			articulo_delete(this); //ELIMINA EL PUNTERO AUXILIAR
+			articulo_delete(this);
 		}
 	}
 
