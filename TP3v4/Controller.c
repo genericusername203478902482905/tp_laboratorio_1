@@ -27,6 +27,7 @@ int controller_loadFromText(char *path, LinkedList *pArrayListEmployee) {
 		ret = parser_EmployeeFromText(f, pArrayListEmployee);
 		system("pause");
 	}
+	fclose(f);
 	return ret;
 }
 
@@ -38,21 +39,21 @@ int controller_loadFromText(char *path, LinkedList *pArrayListEmployee) {
  *
  */
 int controller_loadFromBinary(char *path, LinkedList *pArrayListEmployee) {
-	FILE *f;
 	int ret = -1;
-	f = fopen(path, "rb");
+	FILE *f = NULL;
 
-	if (f == NULL) {
-		ret = 0;
-		printf("Error al abrir el archivo\nVerificar si existe.\n");
+	if (path != NULL && pArrayListEmployee != NULL) {
+		f = fopen(path, "rb");
+		if (f != NULL) {
+			if (!parser_EmployeeFromBinary(f, pArrayListEmployee)) {
+				ret = 0;
+			}
+		}
 
 	} else {
-		ret = 1;
-		ret = parser_EmployeeFromBinary(f, pArrayListEmployee);
-		printf("Archivo de texto abierto\n");
-
+		printf("Error al abrir el archivo\nVerificar si existe.\n");
 	}
-
+	fclose(f);
 	return ret;
 }
 

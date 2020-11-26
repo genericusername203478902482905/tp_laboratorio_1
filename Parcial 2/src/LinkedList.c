@@ -344,7 +344,6 @@ int ll_contains(LinkedList *this, void *pElement) {
 			returnAux = 0;
 		}
 	}
-
 	return returnAux;
 }
 
@@ -467,21 +466,18 @@ int ll_sort(LinkedList *this, int (*pFunc)(void*, void*), int order) {
 	return returnAux;
 }
 
-int ll_count(LinkedList* this, int (*fn)(void* element))
-{
-    int cont=0;
-    void* element;
-
-    if(this != NULL && fn != NULL  )
-        {
-            for(int i=0; i < ll_len(this); i++)
-                {
-                    element = ll_get(this,i);
-                    cont = cont+ fn(element);
-                }
-        }
-
-    return cont;
+int ll_count(LinkedList *this, int (*fn)(void*)) {
+	int acum = 0;
+	void *articulo;
+	int cant;
+	if (this != NULL) {
+		cant = ll_len(this);
+		for (int i = 0; i < cant; i++) {
+			articulo = (void*) ll_get(this, i);
+			acum += fn(articulo);
+		}
+	}
+	return acum;
 }
 
 LinkedList* ll_filter(LinkedList *this, int (*fn)(void*)) {
@@ -505,14 +501,30 @@ LinkedList* ll_filter(LinkedList *this, int (*fn)(void*)) {
 	return listaFiltrada;
 }
 
-/* Ejemplo de funcion fn
-int filtrarMujeres(eEmpleado* emp)
-{
-	int retorno = 0;
-	if(emp != NULL){
-		if(eEmpleado->sexo == 'f'){
-			retorno = 1;
+LinkedList* ll_map(LinkedList *this, int (*fn)(void*)) {
+	int check;
+	LinkedList *lista = ll_newLinkedList();
+	void *articulo;
+	if (lista != NULL) {
+		for (int i = 0; i < ll_len(this); i++) {
+			articulo = ll_get(this, i);
+			check = fn(articulo);
+			if (check) {
+				ll_add(lista, articulo);
+			}
 		}
 	}
-	return retorno;
-}*/
+	return lista;
+}
+
+/* Ejemplo de funcion fn
+ int filtrarMujeres(eEmpleado* emp)
+ {
+ int retorno = 0;
+ if(emp != NULL){
+ if(eEmpleado->sexo == 'f'){
+ retorno = 1;
+ }
+ }
+ return retorno;
+ }*/
