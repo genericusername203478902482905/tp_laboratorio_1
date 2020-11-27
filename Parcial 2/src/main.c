@@ -27,7 +27,6 @@
 
 int main(void) {
 	setbuf(stdout, NULL);
-//	eRubro rubros[]={{1, "CUIDADO DE ROPA           "}, {2, "LIMPIEZA Y DESINFECCION   "}, {3, "CUIDADO PERSONAL E HIGIENE"}, {4, "CUIDADO DEL AUTOMOTOR     "}};
 	int option = 0;
 	int option2;
 	int resultadoMenu = 0;
@@ -60,7 +59,7 @@ int main(void) {
 		case 1:
 			if (!utn_getString(nomArchivo,
 					"\nEscriba el nombre del archivo a cargar: ",
-					"\nERROR: Escriba un nombre valido.(Datos_SP_LABO1.csv)\n",
+					"\nERROR: Escriba un nombre valido. (Datos_SP_LABO1.csv)\n",
 					4, 100, 5)) {
 				flag = 1;
 				controller_loadFromText(nomArchivo, listaArticulos,
@@ -135,7 +134,7 @@ int main(void) {
 				utn_getInt(&option2,
 						"\nCual informe desea realizar?\n"
 								"1. Cantidad de Articulos cuyo precio sea mayor a $100\n"
-								"2. Cantidad de Articulos del Rubro 1 – CUIDADO DE ROPA\n"
+								"2. Cantidad de Articulos del Rubro 1 - CUIDADO DE ROPA\n"
 								"3. Salir\n",
 						"\nError: Seleccione una opcion valida.\n", 1, 3, 3);
 				switch (option2) {

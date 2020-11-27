@@ -264,6 +264,7 @@ int controller_contadorArticulos(LinkedList *pArrayList, int tipo) {
 				printf(
 						"\nLa cantidad de articulos con un precio mayor a $100 es: %d \n",
 						resCount);
+				ret = 0;
 			}
 			break;
 
@@ -273,6 +274,7 @@ int controller_contadorArticulos(LinkedList *pArrayList, int tipo) {
 				printf(
 						"\nLa cantidad de articulos del rubro Cuidado De Ropa es: %d \n",
 						resCount);
+				ret = 0;
 			}
 			break;
 		}

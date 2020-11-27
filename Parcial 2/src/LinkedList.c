@@ -436,7 +436,7 @@ LinkedList* ll_clone(LinkedList *this) {
 }
 
 /** \brief Ordena los elementos de la lista utilizando la funcion criterio recibida como parametro
- * \param pList LinkedList* Puntero a la lista
+ * \param this LinkedList* Puntero a la lista
  * \param pFunc (*pFunc) Puntero a la funcion criterio
  * \param order int  [1] Indica orden ascendente - [0] Indica orden descendente
  * \return int Retorna  (-1) Error: si el puntero a la listas es NULL
@@ -466,6 +466,11 @@ int ll_sort(LinkedList *this, int (*pFunc)(void*, void*), int order) {
 	return returnAux;
 }
 
+/** \brief Cuenta los elementos de la lista utilizando la funcion criterio recibida como parametro
+ * \param this LinkedList* Puntero a la lista
+ * \param fn (*fn) Puntero a la funcion criterio
+ * \return int acumulador con la cantidad de elementos que cumplen la funcion ingresada
+ */
 int ll_count(LinkedList *this, int (*fn)(void*)) {
 	int acum = 0;
 	void *articulo;
@@ -501,6 +506,11 @@ LinkedList* ll_filter(LinkedList *this, int (*fn)(void*)) {
 	return listaFiltrada;
 }
 
+/** \brief Aplica una funcion ingresada a todos los elementos de la LinkedList y lo agrega en una LinkedList nueva vacia
+ * \param this LinkedList* Puntero a la lista
+ * \param fn (*fn) Puntero a la funcion criterio
+ * \return LinkedList* lista nueva con la funcion mapeada
+ */
 LinkedList* ll_map(LinkedList *this, int (*fn)(void*)) {
 	int check;
 	LinkedList *lista = ll_newLinkedList();
